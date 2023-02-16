@@ -6,17 +6,14 @@ namespace VariablesAndNames
     {
         private static void Main(string[] args)
         {
-            int cars, drivers, passengers, carsNotDriven, carsDriven, seatsInACar, carpoolCapacity;
-            double  averagePassengersPerCar;
-
-            cars = 100; 
-            seatsInACar = 4;
-            drivers = 28;
-            passengers = 90;
-            carsNotDriven = cars - drivers;
-            carsDriven = drivers;
-            carpoolCapacity = carsDriven * seatsInACar;
-            averagePassengersPerCar = (double)passengers / carpoolCapacity*seatsInACar;
+           int cars = 100; 
+           int seatsInACar = 4;
+           int drivers = 28;
+           int passengers = 90;
+           int carsNotDriven = cars - drivers;
+           int carsDriven = drivers;
+           int carpoolCapacity = carsDriven * seatsInACar;
+           double averagePassengersPerCar = (double)passengers / carpoolCapacity*seatsInACar;
 
             Console.WriteLine("There are " + cars + " cars available.");
             Console.WriteLine("There are only " + drivers + " drivers available.");
