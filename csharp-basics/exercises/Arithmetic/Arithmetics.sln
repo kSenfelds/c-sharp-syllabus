@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise1", "Exercise1\Exer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckOddEven", "CheckOddEven\CheckOddEven.csproj", "{03CE8972-8C30-4775-B899-093009E0A2B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product1ToN", "Product1ToN\Product1ToN.csproj", "{6BD7D769-BB6B-4066-915E-B225BCDF3AE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product1ToN", "Product1ToN\Product1ToN.csproj", "{6BD7D769-BB6B-4066-915E-B225BCDF3AE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise5", "Exercise5\Exercise5.csproj", "{8F923DB0-BD3C-410E-A382-EFA8FFB1AC0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise5", "Exercise5\Exercise5.csproj", "{8F923DB0-BD3C-410E-A382-EFA8FFB1AC0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaLozaWoza", "CozaLozaWoza\CozaLozaWoza.csproj", "{03C53DB8-262A-4B63-B583-B047BDF65702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{8F923DB0-BD3C-410E-A382-EFA8FFB1AC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F923DB0-BD3C-410E-A382-EFA8FFB1AC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F923DB0-BD3C-410E-A382-EFA8FFB1AC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C53DB8-262A-4B63-B583-B047BDF65702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C53DB8-262A-4B63-B583-B047BDF65702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C53DB8-262A-4B63-B583-B047BDF65702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C53DB8-262A-4B63-B583-B047BDF65702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@
             int exit = 1;
             while (exit > 0)
             {
-                Console.WriteLine("Please enter a number or exit to exit the programm!");
+                Console.WriteLine("Please enter a number or anything else to exit the programm!");
                 var input = Console.ReadLine();
                 int number;
                 bool isNumber = int.TryParse(input, out number);
