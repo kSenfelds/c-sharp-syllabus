@@ -9,11 +9,18 @@
             {
                 Console.WriteLine("Please enter a number or exit to exit the programm!");
                 var input = Console.ReadLine();
-                if (input == "exit")
+                int number;
+                bool isNumber = int.TryParse(input, out number);
+
+                if (isNumber == false)
                 {
                     exit = 0;
                 }
-                else if (int.Parse(input) % 2 == 0)
+                else if (number == 0)
+                {
+                    Console.WriteLine("Zero");
+                }
+                else if (number % 2 == 0)
                 {
                     Console.WriteLine("Even Number");
                 }
