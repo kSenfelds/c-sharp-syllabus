@@ -26,11 +26,8 @@
                     Console.WriteLine(result);
                     counter = 0;
                     result = CozaLozaWoza(i) + " ";
-                }
-                
-            }
-            Console.ReadLine();
-            
+                }        
+            }     
         }
         static string CozaLozaWoza (int number)
         {
