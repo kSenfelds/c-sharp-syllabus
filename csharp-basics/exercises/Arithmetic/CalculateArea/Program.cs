@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CalculateArea;
 
 namespace CalculateArea
 {
@@ -10,6 +11,7 @@ namespace CalculateArea
     {
         static void Main(string[] args)
         {
+            
             switch (GetMenu())
             {
                 case 1: CalculateCircleArea(); break;
@@ -29,7 +31,7 @@ namespace CalculateArea
             Console.WriteLine("2. Calculate the Area of a Rectangle");
             Console.WriteLine("3. Calculate the Area of a Triangle");
             Console.WriteLine("4. Quit\n");
-            Console.WriteLine("Enter your choice (1-4) : ");
+            Console.WriteLine("Enter your choice (1-4) : \n");
             var keyboard = Console.ReadKey();
             
                 switch (keyboard.KeyChar)
@@ -60,8 +62,9 @@ namespace CalculateArea
             decimal length = decimal.Parse(Console.ReadLine());
             Console.WriteLine("Enter width? ");
             decimal width = decimal.Parse(Console.ReadLine());
-            Console.WriteLine("The rectangle's area is "
-                    + Geometry.AreaOfTriangle(length, width));
+            
+            Console.WriteLine($"The rectangle's area is "
+                    + Geometry.AreaOfRectangle(length, width));
         }
 
         public static void CalculateTriangleArea()
@@ -71,7 +74,7 @@ namespace CalculateArea
             Console.WriteLine("Enter triangle's height? ");
             decimal height = decimal.Parse(Console.ReadLine());
             Console.WriteLine("The triangle's area is "
-                    + Geometry.AreaOfRectangle(ground, height));
+                    + Geometry.AreaOfTriangle(ground, height));
         }
     }
 }
