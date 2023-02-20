@@ -14,7 +14,7 @@
                 dots += ".";
             }
             Console.WriteLine(firstWord + dots + secondWord);
-            Console.WriteLine(firstWord.Length + dots.Length + secondWord.Length);
+
         }
     }
 }
