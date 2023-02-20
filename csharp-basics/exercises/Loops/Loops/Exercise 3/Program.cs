@@ -12,7 +12,7 @@
                 Random random= new Random();
                 randomNumbers[i] = random.Next(0, 100);
             }
-            Console.WriteLine($"The number in position {position} is :{ randomNumbers[position - 1]}");
+            Console.WriteLine($"The number in position {position} is : { randomNumbers[position - 1]}");
         }
     }
 }
