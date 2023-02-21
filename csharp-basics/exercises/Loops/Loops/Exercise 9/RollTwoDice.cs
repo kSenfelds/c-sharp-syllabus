@@ -25,9 +25,7 @@ namespace Exercise_9
                     isRolling= false;
                 }
             }
-            
-
-
+ 
         }
 
     }
