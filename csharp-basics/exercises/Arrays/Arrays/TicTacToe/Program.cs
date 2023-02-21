@@ -50,6 +50,7 @@ namespace TicTacToe
                 Console.WriteLine("Location taken!");
                 
             }
+
             else 
             {
                 board[int.Parse(input[0].ToString()), int.Parse(input[2].ToString())] = player == 'O' ? 'O' : 'X';
