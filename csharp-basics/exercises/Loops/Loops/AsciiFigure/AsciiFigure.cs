@@ -8,9 +8,9 @@ namespace AsciiFigure
 {
     internal class AsciiFigure
     {
-        private const int slash2 = 92; // => \
-        private const int slash1 = 47; // => /
-        private const int star = 42;   // => *
+        private const int slash2 = 92;
+        private const int slash1 = 47;
+        private const int star = 42;
 
         public void printFigure(int lines)
         {
