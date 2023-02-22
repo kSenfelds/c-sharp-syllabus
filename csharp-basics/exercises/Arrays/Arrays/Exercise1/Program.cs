@@ -13,7 +13,7 @@ namespace Exercise1
                 1458, 2458, 1254, 1472, 2365,
                 1456, 2165, 1457, 2456
             };
-
+            
             string[] myArray2 = 
             {
                 "Java",
