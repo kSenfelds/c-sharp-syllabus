@@ -11,6 +11,7 @@
             {
                 result *= i;
             }
+
             Console.WriteLine(result);
         }
     }
