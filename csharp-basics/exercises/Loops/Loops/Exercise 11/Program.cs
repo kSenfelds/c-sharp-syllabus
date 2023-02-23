@@ -7,27 +7,26 @@
             Console.WriteLine("Enter a word for Reversecase :");
             string input = Console.ReadLine();
             ReverseCase(input);
-
-            static void ReverseCase (string sentence)
+        }
+        static void ReverseCase(string sentence)
+        {
+            string[] chars = new string[sentence.Length];
+            for (int i = 0; i < chars.Length; i++)
             {
-                string[] chars = new string[sentence.Length];
-                for (int i=0; i< chars.Length; i++)
+                if (char.IsLower(sentence[i]))
                 {
-                    if (char.IsLower(sentence[i]))
-                    {
-                        chars[i] = sentence[i].ToString().ToUpper();
-                    }
-                    else if (char.IsUpper(sentence[i]))
-                    {
-                        chars[i] = sentence[i].ToString().ToLower();
-                    }
-                    else
-                    {
-                        chars[i] = sentence[i].ToString();
-                    }
+                    chars[i] = sentence[i].ToString().ToUpper();
                 }
-                Console.WriteLine(String.Join("", chars));
+                else if (char.IsUpper(sentence[i]))
+                {
+                    chars[i] = sentence[i].ToString().ToLower();
+                }
+                else
+                {
+                    chars[i] = sentence[i].ToString();
+                }
             }
+            Console.WriteLine(String.Join("", chars));
         }
     }
 }

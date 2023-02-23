@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Piglet piglet= new Piglet();
+            Piglet piglet = new Piglet();
             piglet.gamePiglet();
         }
     }

@@ -9,12 +9,11 @@
             Console.WriteLine("Enter second word:");
             string secondWord = Console.ReadLine();
             string dots = "";
-            for (int i = 0; i< 30-firstWord.Length - secondWord.Length; i++)
+            for (int i = 0; i < 30 - firstWord.Length - secondWord.Length; i++)
             {
                 dots += ".";
             }
             Console.WriteLine(firstWord + dots + secondWord);
-
         }
     }
 }

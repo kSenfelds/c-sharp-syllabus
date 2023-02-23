@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-           AsciiFigure ascii = new AsciiFigure();
+            AsciiFigure ascii = new AsciiFigure();
             ascii.printFigure(10);
         }
     }

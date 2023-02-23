@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercise_7
+﻿namespace Exercise_7
 {
     internal class Piglet
     {
-        public void gamePiglet() 
+        public void gamePiglet()
         {
             Console.WriteLine("Welcome to Piglet!");
             Random rand = new Random();
             int status = 1;
             int result = 0;
             int number = 0;
-            do 
+            do
             {
                 number = rand.Next(0, 7);
                 result += number;
@@ -26,7 +20,7 @@ namespace Exercise_7
                     status = 0;
                     break;
                 }
-                    Console.WriteLine("Roll again?");
+                Console.WriteLine("Roll again?");
                 var userChoice = Console.ReadKey();
                 if (userChoice.KeyChar == 'n')
                 {
@@ -35,9 +29,6 @@ namespace Exercise_7
                 }
             }
             while (status > 0);
-            
-           
         }
-
     }
 }

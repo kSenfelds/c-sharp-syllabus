@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             NumberSquare numberSquare = new NumberSquare();
-            numberSquare.createNumberSquare();
+            numberSquare.CreateNumberSquare();
         }
     }
 }

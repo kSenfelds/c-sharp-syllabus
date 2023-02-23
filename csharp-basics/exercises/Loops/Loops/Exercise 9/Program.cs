@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-           RollTwoDice roll = new RollTwoDice();
+            RollTwoDice roll = new RollTwoDice();
             roll.rollTwoDice();
         }
     }
