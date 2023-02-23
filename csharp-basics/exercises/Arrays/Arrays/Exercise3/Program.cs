@@ -6,16 +6,15 @@ namespace Exercise3
     {
         private static void Main(string[] args)
         {
-            int[] numbers = {20, 30, 25, 35, -16, 60, -100};
-
-           
+            int[] numbers = { 20, 30, 25, 35, -16, 60, -100 };
             int sum = 0;
-            for (int i=0; i<numbers.Length; i++)
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                sum+= numbers[i];    
+                sum += numbers[i];
             }
-        
-            double average = (double)sum/(double)numbers.Length;
+
+            double average = (double)sum / (double)numbers.Length;
             Console.WriteLine("Average value of the array elements is : " + average);
             Console.ReadKey();
         }

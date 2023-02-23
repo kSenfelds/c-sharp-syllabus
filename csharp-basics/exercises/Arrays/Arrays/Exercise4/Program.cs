@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise4
 {
@@ -18,15 +14,17 @@ namespace Exercise4
             };
             int checkValue = 1245;
             string result = "Does not contain!";
-            for (int i=0; i<myArray.Length; i++) {
+
+            for (int i = 0; i < myArray.Length; i++)
+            {
                 if (myArray[i] == checkValue)
                 {
-                   result = "Contains!";
+                    result = "Contains!";
                 }
             }
+
             Console.WriteLine(result);
             Console.ReadKey();
-            
         }
     }
 }

@@ -12,14 +12,12 @@ namespace TicTacToe
         {
             InitBoard();
             DisplayBoard();
-            while (!CheckWinner())
+            while (!HasWinner())
             {
                 PlayerMove();
                 DisplayBoard();
             }
-
             Console.ReadKey();
-            
         }
 
         private static void InitBoard()
@@ -48,80 +46,66 @@ namespace TicTacToe
             if (board[int.Parse(input[0].ToString()), int.Parse(input[2].ToString())] != ' ')
             {
                 Console.WriteLine("Location taken!");
-                
-            }
 
-            else 
+            }
+            else
             {
                 board[int.Parse(input[0].ToString()), int.Parse(input[2].ToString())] = player == 'O' ? 'O' : 'X';
                 player = player == 'O' ? 'X' : 'O';
             }
-            
         }
 
-        private static bool CheckWinner ()
+        private static bool HasWinner()
         {
-            
-            if (board[0, 0] == board[0, 1]&& board[0, 1]== board[0, 2]&& board[0, 0]!= ' ')
+            if (board[0, 0] == board[0, 1] && board[0, 1] == board[0, 2] && board[0, 0] != ' ')
             {
-                Console.WriteLine($"Winner is {board[0, 0]}"); 
+                Console.WriteLine($"Winner is {board[0, 0]}");
                 return true;
             }
-
-           else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2] && board[1, 0] != ' ')
+            else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2] && board[1, 0] != ' ')
             {
                 Console.WriteLine($"Winner is {board[1, 1]}");
                 return true;
             }
-
-           else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2] && board[2, 0] != ' ')
+            else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2] && board[2, 0] != ' ')
             {
                 Console.WriteLine($"Winner is {board[2, 0]}");
                 return true;
             }
-
             else if (board[0, 0] == board[1, 0] && board[1, 0] == board[2, 0] && board[2, 0] != ' ')
             {
                 Console.WriteLine($"Winner is {board[2, 0]}");
                 return true;
             }
-
             else if (board[0, 1] == board[1, 1] && board[1, 1] == board[2, 1] && board[1, 1] != ' ')
             {
                 Console.WriteLine($"Winner is {board[1, 1]}");
                 return true;
             }
-
             else if (board[0, 2] == board[1, 2] && board[1, 2] == board[2, 2] && board[2, 2] != ' ')
             {
                 Console.WriteLine($"Winner is {board[2, 2]}");
                 return true;
             }
-
             else if (board[0, 0] == board[1, 1] && board[1, 1] == board[1, 1] && board[2, 2] != ' ')
             {
                 Console.WriteLine($"Winner is {board[1, 1]}");
                 return true;
             }
-
             else if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[1, 1] != ' ')
             {
                 Console.WriteLine($"Winner is {board[1, 1]}");
                 return true;
             }
-
             else if (moves == 9)
             {
                 Console.WriteLine("The game is a tie.");
                 return true;
             }
-
             else
             {
                 return false;
             }
-
         }
-
     }
 }
