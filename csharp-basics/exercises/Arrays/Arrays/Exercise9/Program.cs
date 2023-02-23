@@ -7,7 +7,7 @@
             string[] names = { "kristaps", "RIHARDS", "Reinis", "kRistiAnA" };
             foreach (string name in names)
             {
-                Console.Write(name +" ");
+                Console.Write(name + " ");
             }
             Console.WriteLine();
             string[] cappedNames = CapMe(names);
