@@ -12,17 +12,15 @@
         {
             int turns = selectedWord.Length + 5;
             int turn = 0;
-            while (turn<turns)
+            while (turn < turns)
             {
                 PrintBoard(playChars, misses, guess);
                 turn++;
             }
-            
         }
-
         static void PrintBoard(char[] word, string misses, string guess)
         {
-            string topBottom = new string('-', word.Length *2 +8);
+            string topBottom = new string('-', word.Length * 2 + 8);
             Console.WriteLine(topBottom);
             Console.WriteLine();
             Console.WriteLine($"Word:   {string.Join(' ', word)}");
@@ -31,20 +29,21 @@
             Console.WriteLine();
             PlayerMove(playChars);
             Console.WriteLine();
-           // Console.WriteLine(topBottom);
         }
         static char[] GetWord(string[] hangmanWords)
         {
-            Random random= new Random();
+            Random random = new Random();
+
             return hangmanWords[random.Next(0, hangmanWords.Length)].ToCharArray();
         }
         static char[] EraseWord(char[] word)
         {
             char[] result = new char[word.Length];
-            for(int i=0; i<word.Length; i++)
+            for (int i = 0; i < word.Length; i++)
             {
                 result[i] = '_';
             }
+
             return result;
         }
         static string PlayerMove(char[] playChars)
@@ -78,6 +77,6 @@
 
                 return guess;
             }
-        }     
+        }
     }
 }
