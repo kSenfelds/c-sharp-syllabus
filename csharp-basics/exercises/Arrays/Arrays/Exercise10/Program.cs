@@ -11,9 +11,9 @@
         static int[] CountPosSumNeg(int[] numbers)
         {
             int[] result = new int[2];
-            for (int i=0; i<numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if (numbers[i]<0)
+                if (numbers[i] < 0)
                 {
                     result[1] += numbers[i];
                 }
