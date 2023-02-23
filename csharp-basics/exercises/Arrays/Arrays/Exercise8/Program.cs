@@ -23,13 +23,14 @@
                     {
                         turn = -1;
                         selectedWord = GetWord(hangmanWords);
-                        playChars= EraseWord(selectedWord);
+                        turns = selectedWord.Length + 5;
+                        playChars = EraseWord(selectedWord);
                         checkWinner = false;
                         misses = "";
                     }
-                    else 
-                    { 
-                        break; 
+                    else
+                    {
+                        break;
                     }
                 }
                 turn++;
