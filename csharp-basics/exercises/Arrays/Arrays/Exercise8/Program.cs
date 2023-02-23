@@ -4,7 +4,7 @@
     {
         static string[] hangmanWords = { "bumfuzzle", "hullaballoo", "meldrop", "bumbershoot", "smicker", "collywobbles" };
         static string misses = "";
-        static string guess = "Guess:  ";
+        static bool checkWinner = false;
         static char[] selectedWord = GetWord(hangmanWords);
         static char[] playChars = EraseWord(selectedWord);
 
@@ -14,11 +14,28 @@
             int turn = 0;
             while (turn < turns)
             {
-                PrintBoard(playChars, misses, guess);
+                PrintBoard(playChars, misses);
+                if (checkWinner)
+                {
+                    Console.Write("Play \"again\" or \"quit\"?");
+                    string play = Console.ReadLine();
+                    if (play == "again")
+                    {
+                        turn = -1;
+                        selectedWord = GetWord(hangmanWords);
+                        playChars= EraseWord(selectedWord);
+                        checkWinner = false;
+                        misses = "";
+                    }
+                    else 
+                    { 
+                        break; 
+                    }
+                }
                 turn++;
             }
         }
-        static void PrintBoard(char[] word, string misses, string guess)
+        static void PrintBoard(char[] word, string misses)
         {
             string topBottom = new string('-', word.Length * 2 + 8);
             Console.WriteLine(topBottom);
@@ -52,7 +69,7 @@
             if (!playChars.Contains('_'))
             {
                 guess = "YOU GOT IT!";
-
+                checkWinner = true;
                 return guess;
             }
             else

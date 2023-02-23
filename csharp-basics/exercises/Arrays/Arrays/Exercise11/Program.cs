@@ -14,7 +14,7 @@
             string[] words = sentence.Split(' ');
             if (words.Contains("Nemo"))
             {
-                Console.WriteLine($"I found Nemo at {Array.IndexOf(words, "Nemo")+1}");
+                Console.WriteLine($"I found Nemo at {Array.IndexOf(words, "Nemo") + 1}");
             }
             else
             {
