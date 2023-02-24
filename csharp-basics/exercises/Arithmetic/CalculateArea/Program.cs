@@ -15,10 +15,11 @@ namespace CalculateArea
             switch (GetMenu())
             {
                 case 1: CalculateCircleArea(); break;
-                    case 2: CalculateRectangleArea(); break;
-                    case 3: CalculateTriangleArea(); break;
-                    case 4: break;
+                case 2: CalculateRectangleArea(); break;
+                case 3: CalculateTriangleArea(); break;
+                case 4: break;
             }
+
             Console.ReadLine();
         }
 
@@ -42,7 +43,6 @@ namespace CalculateArea
                     case '4': userChoice = 4; break;
                     default: Console.WriteLine("Wrong input try again!"); userChoice = -1; break;
                 }
-           
             
             return userChoice;
         }
@@ -61,8 +61,7 @@ namespace CalculateArea
             Console.WriteLine("Enter length? ");
             decimal length = decimal.Parse(Console.ReadLine());
             Console.WriteLine("Enter width? ");
-            decimal width = decimal.Parse(Console.ReadLine());
-            
+            decimal width = decimal.Parse(Console.ReadLine()); 
             Console.WriteLine($"The rectangle's area is "
                     + Geometry.AreaOfRectangle(length, width));
         }

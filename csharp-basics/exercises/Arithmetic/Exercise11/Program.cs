@@ -8,6 +8,7 @@
             int input = int.Parse(Console.ReadLine());
             Console.WriteLine(isMoranHarshad(input));
         }
+
         static string isMoranHarshad (int number)
         {
             int sumOfNumbers = 0;
@@ -20,7 +21,6 @@
                 number /= 10;
                 sumOfNumbers+= digits[i];
             }
-            
             if (numberOriginal % sumOfNumbers == 0)
             {
                 if (isPrime(numberOriginal/sumOfNumbers) == true)
@@ -30,15 +30,14 @@
                 else
                 {
                     return "H";
-                }
-                
+                }  
             }
-            
             else
             {
                 return "Neither";
             }
         }
+
         static bool isPrime (int number)
         {
             int a = 0;

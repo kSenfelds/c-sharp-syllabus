@@ -20,7 +20,6 @@
                     result += CozaLozaWoza(i) + " ";
                     counter++;
                 }
-                
                 else 
                 {
                     Console.WriteLine(result);

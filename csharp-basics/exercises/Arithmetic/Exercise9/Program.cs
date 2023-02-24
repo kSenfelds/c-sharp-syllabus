@@ -12,6 +12,7 @@
             double height = double.Parse(Console.ReadLine());
             Console.WriteLine(CalculateBMI(system, weight, height));
         }
+
         static string CalculateBMI (string system, double weight, double height)
         {
             if (system == "metric")
