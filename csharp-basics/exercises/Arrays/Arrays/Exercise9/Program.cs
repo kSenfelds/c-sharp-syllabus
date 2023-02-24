@@ -25,7 +25,6 @@
             {
                 result[i] = words[i].Substring(0, 1).ToUpper() + words[i].Substring(1).ToLower();
             }
-
             return result;
         }
     }

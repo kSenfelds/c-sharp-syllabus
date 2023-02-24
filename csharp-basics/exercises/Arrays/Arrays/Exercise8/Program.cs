@@ -17,6 +17,7 @@
                 PrintBoard(playChars, misses);
                 if (checkWinner)
                 {
+                    Console.WriteLine("YOU GOT IT!");
                     Console.Write("Play \"again\" or \"quit\"?");
                     string play = Console.ReadLine();
                     if (play == "again")
@@ -51,7 +52,6 @@
         static char[] GetWord(string[] hangmanWords)
         {
             Random random = new Random();
-
             return hangmanWords[random.Next(0, hangmanWords.Length)].ToCharArray();
         }
         static char[] EraseWord(char[] word)
@@ -61,7 +61,6 @@
             {
                 result[i] = '_';
             }
-
             return result;
         }
         static string PlayerMove(char[] playChars)
@@ -69,7 +68,6 @@
             string guess = "Guess:  ";
             if (!playChars.Contains('_'))
             {
-                guess = "YOU GOT IT!";
                 checkWinner = true;
                 return guess;
             }
@@ -92,7 +90,6 @@
                 {
                     misses += playerInput.ToString();
                 }
-
                 return guess;
             }
         }
