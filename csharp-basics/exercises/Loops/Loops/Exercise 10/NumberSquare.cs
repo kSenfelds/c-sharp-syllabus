@@ -15,6 +15,7 @@
                 {
                     Console.Write(i);
                 }
+
                 for (int i = min; i < row; i++)
                 {
                     Console.Write(i);

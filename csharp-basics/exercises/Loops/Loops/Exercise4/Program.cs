@@ -11,6 +11,7 @@ namespace Exercise4
             {
                 Console.WriteLine(vowels[i]);
             }
+
             foreach (char vowel in vowels)
             {
                 Console.WriteLine(vowel);
