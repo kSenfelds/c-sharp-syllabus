@@ -46,7 +46,6 @@ namespace TicTacToe
             if (board[int.Parse(input[0].ToString()), int.Parse(input[2].ToString())] != ' ')
             {
                 Console.WriteLine("Location taken!");
-
             }
             else
             {
