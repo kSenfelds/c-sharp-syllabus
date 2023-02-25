@@ -8,6 +8,7 @@
             Console.WriteLine(CountPosSumNeg(numbers)[0]);
             Console.WriteLine(CountPosSumNeg(numbers)[1]);
         }
+
         static int[] CountPosSumNeg(int[] numbers)
         {
             int[] result = new int[2];

@@ -37,6 +37,7 @@
                 turn++;
             }
         }
+
         static void PrintBoard(char[] word, string misses)
         {
             string topBottom = new string('-', word.Length * 2 + 8);
@@ -49,11 +50,13 @@
             PlayerMove(playChars);
             Console.WriteLine();
         }
+
         static char[] GetWord(string[] hangmanWords)
         {
             Random random = new Random();
             return hangmanWords[random.Next(0, hangmanWords.Length)].ToCharArray();
         }
+
         static char[] EraseWord(char[] word)
         {
             char[] result = new char[word.Length];
@@ -63,6 +66,7 @@
             }
             return result;
         }
+
         static string PlayerMove(char[] playChars)
         {
             string guess = "Guess:  ";

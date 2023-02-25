@@ -18,6 +18,7 @@
 
             Console.ReadKey();
         }
+
         static string[] CapMe(string[] words)
         {
             string[] result = new string[words.Length];

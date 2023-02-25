@@ -9,6 +9,7 @@
             FindNemo("I Nemo am");
             FindNemo("I am not a NEmo!");
         }
+
         static void FindNemo(string sentence)
         {
             string[] words = sentence.Split(' ');
