@@ -5,10 +5,10 @@
         private double _currentKilometers;
         private FuelGauge _fuelGauge;
 
-        public Odometer(double currentKilometers, double fuel)
+        public Odometer(double currentKilometers, FuelGauge fuel)
         {
             _currentKilometers = currentKilometers;
-            _fuelGauge = new FuelGauge(fuel);
+            _fuelGauge = fuel;
         }
 
         public void Report()
@@ -28,15 +28,6 @@
         public bool AbleToDrive()
         {
             return _fuelGauge.GetFuelAmount() > 0 ? true : false;
-        }
-
-        public void FillTank(int literCount)
-        {
-            if (literCount >= 0)
-            {
-                _fuelGauge.IncrementFuel();
-                FillTank(literCount - 1);
-            }
         }
     }
 }

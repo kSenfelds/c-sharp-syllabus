@@ -4,11 +4,6 @@
     {
         private double _fuelAmount;
 
-        public FuelGauge(double fuelAmount)
-        {
-            _fuelAmount = fuelAmount;
-        }
-
         public double GetFuelAmount()
         {
             return _fuelAmount;

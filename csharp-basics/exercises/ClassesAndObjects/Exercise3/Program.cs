@@ -4,9 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Odometer car1 = new Odometer(0, 0);
+            FuelGauge fuel = new FuelGauge();
+            Odometer car1 = new Odometer(0, fuel);
             int distance = 1001;
-            car1.FillTank(70);
+
+            for (int i = 0; i < 70; i++)
+            {
+                fuel.IncrementFuel();
+            }
+
             for (int i = 0; i < distance; i++)
             {
                 if (car1.AbleToDrive())
