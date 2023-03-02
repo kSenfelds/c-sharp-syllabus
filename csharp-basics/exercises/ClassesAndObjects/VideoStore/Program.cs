@@ -9,8 +9,9 @@ namespace VideoStore
 
         private static void Main(string[] args)
         {
+            bool isActive = true;
 
-            while (true)
+            while (isActive)
             {
                 Console.WriteLine("Choose the operation you want to perform ");
                 Console.WriteLine("Choose 0 for EXIT");
@@ -25,6 +26,7 @@ namespace VideoStore
                 switch (n)
                 {
                     case 0:
+                        isActive = false;
                         return;
                     case 1:
                         FillVideoStore();
@@ -42,6 +44,7 @@ namespace VideoStore
                         RateMovie();
                         break;
                     default:
+                        isActive = false;
                         return;
                 }
             }
@@ -67,10 +70,8 @@ namespace VideoStore
             {
                 Console.WriteLine("Enter movie name");
                 string movieName = Console.ReadLine();
-
                 Console.WriteLine("Enter rating");
                 int rating = Convert.ToInt16(Console.ReadLine());
-
                 _videoStore.AddVideo(movieName);
                 _videoStore.TakeUsersRating(rating, movieName);
             }

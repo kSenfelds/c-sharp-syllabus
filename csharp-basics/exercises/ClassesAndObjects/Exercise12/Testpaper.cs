@@ -17,6 +17,5 @@ namespace Exercise12
             MarkScheme= markScheme;
             PassMark = passMark;
         }
-
     }
 }

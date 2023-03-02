@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercise6
+﻿namespace Exercise6
 {
     internal class Dog
     {
@@ -12,31 +6,33 @@ namespace Exercise6
         private string _sex;
         private Dog _mother;
         private Dog _father;
-        public Dog(string name, string sex) 
+
+        public Dog(string name, string sex)
         {
             _name = name;
             _sex = sex;
             _mother = null;
             _father = null;
         }
-        public void SetParents (Dog mother, Dog father)
+
+        public void SetParents(Dog mother, Dog father)
         {
-            _mother= mother;
+            _mother = mother;
             _father = father;
         }
 
         public void SetParents(Dog mother)
         {
-            _mother= mother;
-            _father= null;
+            _mother = mother;
+            _father = null;
         }
-        
-        public string GetFathersName() 
+
+        public string GetFathersName()
         {
             return _father == null ? "Unknown" : _father._name;
         }
 
-        public bool HasSameMother (Dog otherDog)
+        public bool HasSameMother(Dog otherDog)
         {
             return _mother == otherDog._mother;
         }

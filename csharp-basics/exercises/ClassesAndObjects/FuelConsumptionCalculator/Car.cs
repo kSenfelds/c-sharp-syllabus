@@ -1,14 +1,14 @@
-﻿using System;
-namespace FuelConsumptionCalculator
+﻿namespace FuelConsumptionCalculator
 {
     public class Car
     {
         private double _startKilometers;
         private double _endKilometers;
         private double _liters;
+
         public Car(double startOdo)
         {
-            _startKilometers= startOdo;
+            _startKilometers = startOdo;
         }
 
         public double CalculateConsumption()
@@ -19,7 +19,7 @@ namespace FuelConsumptionCalculator
         private double ConsumptionPer100Km()
         {
 
-            return (_liters / _endKilometers)*100;
+            return (_liters / _endKilometers) * 100;
         }
 
         public bool GasHog()
@@ -34,7 +34,7 @@ namespace FuelConsumptionCalculator
 
         public void FillUp(int mileage, double liters)
         {
-            _endKilometers += mileage ;
+            _endKilometers += mileage;
             _liters += liters;
         }
     }

@@ -23,6 +23,7 @@
         public static Movie[] GetPG(Movie[] movies)
         {
             Movie[] result = new Movie[movies.Length];
+
             for (int i = 0; i < movies.Length; i++)
             {
                 if (movies[i]._rating == "PG")
