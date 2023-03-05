@@ -12,7 +12,7 @@
             }
             set
             {
-
+                TestsTaken= value;
             }
         }
 

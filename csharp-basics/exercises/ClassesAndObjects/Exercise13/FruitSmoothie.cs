@@ -9,6 +9,7 @@
         {
             _ingredients = ingredients;
         }
+
         private decimal GetCost()
         {
             for (int i = 0; i < _ingredients.Length; i++)

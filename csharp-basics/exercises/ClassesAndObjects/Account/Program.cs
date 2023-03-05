@@ -32,13 +32,19 @@ namespace Account
             Account a = new Account("A", 100.0);
             Account b = new Account("B", 0);
             Account c = new Account("C", 0);
-            Account.Transfer(a, b, 50.0);
-            Account.Transfer(b, c, 25.0);
+            Transfer(a, b, 50.0);
+            Transfer(b, c, 25.0);
             Console.WriteLine(a);
             Console.WriteLine(b);
             Console.WriteLine(c);
 
             Console.ReadKey();
+        }
+
+        static void Transfer(Account from, Account to, double howMuch)
+        {
+            from.Withdrawal(howMuch);
+            to.Deposit(howMuch);
         }
     }
 }

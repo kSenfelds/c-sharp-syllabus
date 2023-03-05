@@ -13,16 +13,17 @@
             Console.WriteLine("How long has the account been opened? :");
             int months = int.Parse(Console.ReadLine());
 
-            for (int i=0; i<months; i++)
+            for (int i = 0; i < months; i++)
             {
-                Console.WriteLine($"Enter amount deposited for month {i+1}");
+                Console.WriteLine($"Enter amount deposited for month {i + 1}");
                 int deposited = int.Parse(Console.ReadLine());
-                Console.WriteLine($"Enter amount withdrawn for month {i+1}");
+                Console.WriteLine($"Enter amount withdrawn for month {i + 1}");
                 int withdrawn = int.Parse(Console.ReadLine());
                 savings.Deposit(deposited);
                 savings.Withdraw(withdrawn);
                 savings.AddMonthlyRate();
             }
+
             savings.PrintInfo();
 
             Console.ReadKey();
