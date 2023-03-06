@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VideoStore
 {
@@ -10,9 +6,12 @@ namespace VideoStore
     {
         private const int _countOfMovies = 3;
         private static VideoStore _videoStore = new VideoStore();
+
         private static void Main(string[] args)
         {
-            while (true)
+            bool isActive = true;
+
+            while (isActive)
             {
                 Console.WriteLine("Choose the operation you want to perform ");
                 Console.WriteLine("Choose 0 for EXIT");
@@ -20,12 +19,14 @@ namespace VideoStore
                 Console.WriteLine("Choose 2 to rent video (as user)");
                 Console.WriteLine("Choose 3 to return video (as user)");
                 Console.WriteLine("Choose 4 to list inventory");
+                Console.WriteLine("Choose 5 to rate movie (as user)");
 
                 int n = Convert.ToByte(Console.ReadLine());
 
                 switch (n)
                 {
                     case 0:
+                        isActive = false;
                         return;
                     case 1:
                         FillVideoStore();
@@ -39,7 +40,11 @@ namespace VideoStore
                     case 4:
                         ListInventory();
                         break;
+                    case 5:
+                        RateMovie();
+                        break;
                     default:
+                        isActive = false;
                         return;
                 }
             }
@@ -50,16 +55,23 @@ namespace VideoStore
             _videoStore.ListInventory();
         }
 
+        private static void RateMovie()
+        {
+            Console.WriteLine("Enter movie name");
+            string title = Console.ReadLine();
+            Console.WriteLine("Enter rating");
+            int rating = Convert.ToInt16(Console.ReadLine());
+            _videoStore.TakeUsersRating(rating, title);
+        }
+
         private static void FillVideoStore()
         {
             for (var i = 0; i < _countOfMovies; i++)
             {
                 Console.WriteLine("Enter movie name");
                 string movieName = Console.ReadLine();
-
                 Console.WriteLine("Enter rating");
                 int rating = Convert.ToInt16(Console.ReadLine());
-
                 _videoStore.AddVideo(movieName);
                 _videoStore.TakeUsersRating(rating, movieName);
             }
