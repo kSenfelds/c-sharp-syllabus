@@ -1,3 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-//ToDo: Write a query that returns names of days
-//https://docs.microsoft.com/en-us/dotnet/api/system.dayofweek?view=net-6.0
+﻿
+    static string DayName(DateTime dt)
+    {
+        return dt.DayOfWeek.ToString();
+    }
+    Console.WriteLine(DayName(new DateTime(2023, 3, 6)));
+    Console.ReadKey();
