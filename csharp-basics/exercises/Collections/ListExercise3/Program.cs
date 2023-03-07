@@ -15,11 +15,10 @@ namespace ListExercise3
             colors.Add("Black");
 
             Console.WriteLine(string.Join(",", colors));
-
             colors.Insert(0, "Yellow");
             colors.Insert(2, "Purple");
-
             Console.WriteLine(string.Join(",", colors));
+
             Console.ReadKey();
         }
     }

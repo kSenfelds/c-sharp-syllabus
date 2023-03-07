@@ -4,14 +4,13 @@ using System.Linq;
 
 namespace NumbersFromRange
 {
-
     internal class Program
     {
-
         static void Main(string[] args)
         {
             var random = new Random();
             var numbers = new List<int>();
+
             while (numbers.Count() < 10)
             {
                 numbers.Add(random.Next(1, 100));

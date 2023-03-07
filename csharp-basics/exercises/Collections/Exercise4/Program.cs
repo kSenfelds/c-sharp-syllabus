@@ -1,13 +1,12 @@
 ﻿namespace Exercise4
 {
-
     internal class Program
     {
-
         static void Main(string[] args)
         {
             bool hasName = true;
             List<string> names = new List<string>();
+
             while (hasName)
             {
                 Console.WriteLine("Enter name");

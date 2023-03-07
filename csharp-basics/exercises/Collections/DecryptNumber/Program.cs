@@ -6,7 +6,6 @@ namespace DecryptNumber
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
             var cryptedNumbers = new List<string>
@@ -35,7 +34,6 @@ namespace DecryptNumber
 
             foreach (var c in cryptedNumbers)
             {
-
                 for (int i = 0; i < c.Length; i++)
                 {
                     Console.Write(dictionary.First(x => x.Value == c[i]).Key);

@@ -9,7 +9,6 @@ namespace Exercise1
         private static void Main(string[] args)
         {
             string[] array = { "Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla" };
-
             List<string> arrayAsList = new List<string>();
             arrayAsList = array.ToList();
 

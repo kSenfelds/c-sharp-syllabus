@@ -18,9 +18,7 @@ namespace ListExercise10
 
             Console.WriteLine("Original array list: ");
             Console.WriteLine(string.Join(",", colors));
-
             colors.Clear();
-
             Console.WriteLine("New array list: ");
             Console.WriteLine(string.Join(",", colors));
 

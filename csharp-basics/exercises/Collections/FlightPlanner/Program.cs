@@ -33,15 +33,18 @@ namespace FlightPlanner
             Console.WriteLine("To display list of the cities press 1");
             Console.WriteLine("To exit program press #");
             var input = Console.ReadKey().KeyChar;
+
             if (input == '1')
             {
                 foreach (var flight in flights)
                 {
                     Console.WriteLine($"{flight.Key}");
                 }
+
             }
             Console.WriteLine("To enter start city press 1");
             input = Console.ReadKey().KeyChar;
+
             if (input == '1')
             {
                 var citiesVisited = new List<string>();
@@ -61,6 +64,7 @@ namespace FlightPlanner
                     Console.WriteLine("enter next destination:");
                     city = Console.ReadLine();
                     citiesVisited.Add(city);
+
                     if (citiesVisited.First() == citiesVisited.Last())
                     {
                         Console.WriteLine("Welcome back - the cities that you have visited :");
