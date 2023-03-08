@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hierarchy
+namespace Persons
 {
     internal class Employee : Person
     {

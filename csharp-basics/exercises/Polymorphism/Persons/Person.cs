@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hierarchy
+﻿namespace Persons
 {
     public abstract class Person
     {
@@ -14,12 +10,12 @@ namespace Hierarchy
         public Person(string firstName, string lastName, string address, int id)
         {
             Id = id;
-            Firstname= firstName;
-            Lastname= lastName;
-            Address= address;
+            Firstname = firstName;
+            Lastname = lastName;
+            Address = address;
         }
 
         public abstract void Display();
-        
+
     }
 }
