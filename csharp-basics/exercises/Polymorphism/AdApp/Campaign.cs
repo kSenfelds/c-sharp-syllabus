@@ -7,12 +7,12 @@ namespace AdApp
     {
         private List<Advert> campaign;
 
-        public Campaign() 
+        public Campaign()
         {
             campaign = new List<Advert>();
         }
 
-        public void AddAdvert(Advert a) 
+        public void AddAdvert(Advert a)
         {
             campaign.Add(a);
         }
@@ -24,7 +24,9 @@ namespace AdApp
 
         public override string ToString()
         {
-            return "Advert Campaign" + campaign + "\nTotal Cost = "+ GetCost();
+            var result = "";
+            campaign.ForEach(item => result += item.ToString());
+            return "Advert Campaign" + result + "\nTotal Cost = " + GetCost();
         }
     }
 }
