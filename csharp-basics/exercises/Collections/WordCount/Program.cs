@@ -11,8 +11,7 @@ namespace WordCount
             int wordsCount = 0;
             int charsCount = 0;
 
-            foreach (string line in System.IO.File.ReadLines(
-                @"C:\Users\Ršu\Source\Repos\c-sharp-syllabus\csharp-basics\exercises\Collections\WordCount\lear.txt"))
+            foreach (string line in System.IO.File.ReadLines(@"..\..\lear.txt"))
             {
                 counter++;
                 charsCount += line.ToCharArray().Count();

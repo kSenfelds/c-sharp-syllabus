@@ -6,7 +6,7 @@ namespace Histogram
 {
     class Program
     {
-        private const string Path = @"C:\Users\Ršu\Source\Repos\c-sharp-syllabus\csharp-basics\exercises\Collections\Histogram\midtermscores.txt";
+        private const string Path = @"..\..\midtermscores.txt";
         private static void Main(string[] args)
         {
             var readText = File.ReadAllText(Path);

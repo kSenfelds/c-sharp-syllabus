@@ -14,24 +14,14 @@ namespace PhoneBook
 
         private bool Find(string name)
         {
-            if (_data.ContainsKey(name))
-            {
-                return true;
-            }
-            return false;
+            return _data.ContainsKey(name);
         }
 
         public string GetNumber(string name)
         {
-            var position = Find(name);
-            if (position == false)
-            {
-                return null;
-            }
-            else
-            {
-                return _data[name]._number;
-            }
+            var hasPosition = Find(name);
+
+            return hasPosition ? _data[name]._number : null;
         }
 
         public void PutNumber(string name, string number)
