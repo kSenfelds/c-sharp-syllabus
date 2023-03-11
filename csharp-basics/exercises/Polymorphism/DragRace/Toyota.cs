@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DragRace
 {
-    internal class Toyota :ICar, IBoostable
+    internal class Toyota : ICar, IBoostable
     {
         private int currentSpeed = 0;
 
@@ -18,7 +16,7 @@ namespace DragRace
             currentSpeed -= 5;
         }
 
-        public void UseNitrousOxideEngine ()
+        public void UseNitrousOxideEngine()
         {
             currentSpeed += 10;
         }

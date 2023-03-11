@@ -16,6 +16,7 @@ namespace AdApp
             var totalCost = base.Cost();
             totalCost += _column * _rate;
             SetFee(totalCost);
+
             return totalCost;
         }
 

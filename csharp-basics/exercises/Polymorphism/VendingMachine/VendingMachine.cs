@@ -7,7 +7,6 @@ namespace VendingMachine
     public class VendingMachine : IVendingMachine
     {
         public string Manufacturer { get; }
-
         public bool HasProducts { get; }
         private Money _total = new Money();
         private Money _change = new Money();
@@ -25,21 +24,16 @@ namespace VendingMachine
 
         public Money InsertCoin(Money amount)
         {
-            if (amount.Euros != 1.00 || amount.Euros != 2.00 || amount.Cents != 10 || amount.Cents != 20 || amount.Cents != 50)
-            {
-                Console.WriteLine("Wrong coin!");
-            }
-            else
-            {
-                _total.Euros += amount.Euros;
-                _total.Cents += amount.Cents;
-                var change = _total.Cents % 100;
-                _total.Euros += _total.Cents / 100;
-                _total.Cents = change;
-                Amount = _total;
-            }
+            _total.Euros += amount.Euros;
+            _total.Cents += amount.Cents;
+            var change = _total.Cents % 100;
+            _total.Euros += _total.Cents / 100;
+            _total.Cents = change;
+            Amount = _total;
+
             return _total;
         }
+
         private void DeleteAmounts()
         {
             _total.Euros = 0;
@@ -49,8 +43,21 @@ namespace VendingMachine
             _change.Euros = 0;
         }
 
+        private Money CalculateChange(Product product)
+        {
+            var moneyIn = Amount.Euros * 100 + Amount.Cents;
+            var moneyPrice = product.Price.Euros * 100 + product.Price.Cents;
+            var change = moneyIn - moneyPrice;
+            _change.Cents = change % 100;
+            _change.Euros = change / 100;
+
+            return _change;
+        }
+
         public Money ReturnMoney()
         {
+            Console.WriteLine($"Your change {_change}");
+
             return _change;
         }
 
@@ -61,7 +68,14 @@ namespace VendingMachine
             _products.Add(new Product(count, price, name));
             Products = _products.ToArray();
             _products.Clear();
+
             return productsLength < Products.Length;
+        }
+
+        public void BuyProduct(string name)
+        {
+            Product selectedProduct = Products.First(p => p.Name == name);
+            UpdateProduct(0, name, selectedProduct.Price, 1);
         }
 
         public bool UpdateProduct(int productNumber, string name, Money? price, int amount)
@@ -72,12 +86,8 @@ namespace VendingMachine
             {
                 if (selectedProduct.CanAfford(Amount))
                 {
-                    var moneyIn = Amount.Euros * 100 + Amount.Cents;
-                    var moneyPrice = selectedProduct.Price.Euros * 100 + selectedProduct.Price.Cents;
-                    var change = moneyIn - moneyPrice;
-
-                    _change.Cents = change % 100;
-                    _change.Euros = change / 100;
+                    Console.WriteLine($"Bought {selectedProduct.Name} for {selectedProduct.Price}!");
+                    CalculateChange(selectedProduct);
                     ReturnMoney();
                     DeleteAmounts();
                     selectedProduct.DecreaseCount();
@@ -87,14 +97,28 @@ namespace VendingMachine
                 else
                 {
                     Console.WriteLine("Not enough money!");
+
                     return false;
                 }
             }
             else
             {
                 Console.WriteLine("Product not found!");
+
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            var result = "";
+
+            for (int i = 0; i < Products.Length; i++)
+            {
+                result += Products[i].Name + "\n";
+            }
+
+            return result;
         }
     }
 }

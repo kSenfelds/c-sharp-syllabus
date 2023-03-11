@@ -22,6 +22,7 @@
             var result = base.Pay();
             result += _totalSales * _commisionRate;
             _totalSales = 0;
+
             return result;
         }
 
@@ -29,6 +30,7 @@
         {
             var print = base.ToString();
             print += "\nTotal sales: " + _totalSales;
+
             return print;
         }
     }

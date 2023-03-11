@@ -26,13 +26,16 @@ namespace AdApp
         {
             var totalCost = base.Cost();
             totalCost += _costPerCopy * _numberOfCopies;
+
             switch (_dimensions)
             {
                 case "Large": totalCost *= 3; break;
                 case "Medium": totalCost *= 2; break;
                 default: break;
             }
+
             SetFee(totalCost);
+
             return totalCost;
         }
 

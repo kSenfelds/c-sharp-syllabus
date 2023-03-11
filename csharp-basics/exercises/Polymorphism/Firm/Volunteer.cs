@@ -1,9 +1,10 @@
 namespace Firm
 {
-    public class Volunteer: StaffMember
+    public class Volunteer : StaffMember
     {
         public Volunteer(string eName, string eAddress, string ePhone) : base(eName, eAddress, ePhone)
         {
+
         }
 
         public override double Pay()

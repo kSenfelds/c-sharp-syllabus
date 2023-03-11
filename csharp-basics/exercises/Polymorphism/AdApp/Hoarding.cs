@@ -19,6 +19,7 @@ namespace AdApp
             totalCost += _rate * _numDays;
             totalCost += _primeLocation ? (int)(totalCost * 0.5d) : 0;
             SetFee(totalCost);
+
             return totalCost;
         }
 

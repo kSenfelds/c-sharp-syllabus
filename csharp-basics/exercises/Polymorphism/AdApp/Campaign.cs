@@ -26,6 +26,7 @@ namespace AdApp
         {
             var result = "";
             campaign.ForEach(item => result += item.ToString());
+
             return "Advert Campaign" + result + "\nTotal Cost = " + GetCost();
         }
     }

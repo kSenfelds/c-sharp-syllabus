@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DragRace
 {
-    internal class Volkswagen :ICar
+    internal class Volkswagen : ICar
     {
         private int currentSpeed = 0;
 

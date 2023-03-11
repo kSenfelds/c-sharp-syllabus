@@ -13,6 +13,7 @@
         public override string ToString()
         {
             var result = base.ToString();
+
             return $"{result} {_livingRegion}";
         }
     }
