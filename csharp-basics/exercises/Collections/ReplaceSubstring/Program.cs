@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace ReplaceSubstring
 {
@@ -7,8 +8,14 @@ namespace ReplaceSubstring
         static void Main(string[] args)
         {
             var words = new[] { "near", "speak", "tonight", "weapon", "customer", "deal", "lawyer" };
-            //ToDo: Write a query that replaces 'ea' substring with astersik (*) in given list of words.
-            //ToDo: "learn", "current", "deal" →  "l*rn", "current", "d*l"
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = Regex.Replace(words[i], "ea", "*");
+                Console.WriteLine(words[i]);
+            }
+
+            Console.ReadKey();
         }
     }
 }
