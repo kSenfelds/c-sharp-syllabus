@@ -10,6 +10,7 @@
             Euros = euros;
             Cents = cents;
         }
+
         public override string ToString()
         {
             return $"{Euros}EUR and {Cents} CENTS";

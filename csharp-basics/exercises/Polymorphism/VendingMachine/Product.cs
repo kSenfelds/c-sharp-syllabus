@@ -13,16 +13,6 @@
             Name = name;
         }
 
-        public bool IsAvailable()
-        {
-            return Available > 0;
-        }
-
-        public void DecreaseCount()
-        {
-            Available--;
-        }
-
         public bool CanAfford(Money amount)
         {
             return Price.Euros < amount.Euros || (Price.Euros == amount.Euros && Price.Cents <= amount.Cents);

@@ -7,22 +7,22 @@ namespace Hierarchy
         private string _name;
         private string _animalType;
         private double _animalWeight;
-        public int _foodEaten { get; private set; }
+        public int FoodEaten { get; private set; }
 
         public Animal(string name, string animalType, double animalWeight)
         {
             _name = name;
             _animalType = animalType;
             _animalWeight = animalWeight;
-            _foodEaten = 0;
+            FoodEaten = 0;
         }
 
         public void AddFood(int food)
         {
-            _foodEaten = food;
+            FoodEaten = food;
         }
 
-        public abstract void makeSound();
+        public abstract void MakeSound();
 
         public abstract void eat(Food food);
 

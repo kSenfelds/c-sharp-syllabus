@@ -12,7 +12,7 @@ namespace Hierarchy
             _breed = breed;
         }
 
-        public override void makeSound()
+        public override void MakeSound()
         {
             Console.WriteLine("Meoww, Purr, Purr");
         }
@@ -24,7 +24,7 @@ namespace Hierarchy
 
         public override string ToString()
         {
-            return $"{base.ToString()} {_breed} {_foodEaten}";
+            return $"{base.ToString()} {_breed} {FoodEaten}";
         }
     }
 }

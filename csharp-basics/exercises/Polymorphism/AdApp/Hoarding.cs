@@ -4,20 +4,20 @@ namespace AdApp
     {
         private int _rate;
         private int _numDays;
-        private bool _primeLocation;
+        private bool _isPrimeLocation;
 
         public Hoarding(int fee, int days, int rate, bool isPrimeLocation) : base(fee)
         {
             _rate = rate;
             _numDays = days;
-            _primeLocation = isPrimeLocation;
+            _isPrimeLocation = isPrimeLocation;
         }
 
         public new int Cost()
         {
             var totalCost = base.Cost();
             totalCost += _rate * _numDays;
-            totalCost += _primeLocation ? (int)(totalCost * 0.5d) : 0;
+            totalCost += _isPrimeLocation ? (int)(totalCost * 0.5d) : 0;
             SetFee(totalCost);
 
             return totalCost;

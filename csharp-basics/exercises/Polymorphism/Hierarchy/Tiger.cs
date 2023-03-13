@@ -10,7 +10,7 @@ namespace Hierarchy
 
         }
 
-        public override void makeSound()
+        public override void MakeSound()
         {
             Console.WriteLine("Roarr!, Purr, Purr");
         }
@@ -29,7 +29,7 @@ namespace Hierarchy
 
         public override string ToString()
         {
-            return $"{base.ToString()} {_foodEaten}";
+            return $"{base.ToString()} {FoodEaten}";
         }
     }
 }

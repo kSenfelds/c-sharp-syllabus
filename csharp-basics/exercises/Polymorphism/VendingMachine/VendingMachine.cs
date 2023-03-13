@@ -8,8 +8,6 @@ namespace VendingMachine
     {
         public string Manufacturer { get; }
         public bool HasProducts { get; }
-        private Money _total = new Money();
-        private Money _change = new Money();
         public Money Amount { get; set; }
         public Product[] Products { get; set; }
         private List<Product> _products = new List<Product>();
@@ -24,41 +22,39 @@ namespace VendingMachine
 
         public Money InsertCoin(Money amount)
         {
-            _total.Euros += amount.Euros;
-            _total.Cents += amount.Cents;
-            var change = _total.Cents % 100;
-            _total.Euros += _total.Cents / 100;
-            _total.Cents = change;
-            Amount = _total;
+            Money moneyInMachine = new Money();
+            var totalEuros = Amount.Euros + amount.Euros;
+            var totalCents = Amount.Cents + amount.Cents;
+            moneyInMachine.Euros = totalEuros + totalCents / 100;
+            moneyInMachine.Cents = totalCents % 100;
+            Amount = moneyInMachine;
 
-            return _total;
+            return Amount;
         }
 
-        private void DeleteAmounts()
+        private void DeleteAmount()
         {
-            _total.Euros = 0;
-            _total.Cents = 0;
-            Amount = _total;
-            _change.Cents = 0;
-            _change.Euros = 0;
+            Amount = new Money(0, 0);
         }
 
-        private Money CalculateChange(Product product)
+        private Money CalculateChange(Money price)
         {
+            Money change = new Money();
             var moneyIn = Amount.Euros * 100 + Amount.Cents;
-            var moneyPrice = product.Price.Euros * 100 + product.Price.Cents;
-            var change = moneyIn - moneyPrice;
-            _change.Cents = change % 100;
-            _change.Euros = change / 100;
+            var moneyPrice = price.Euros * 100 + price.Cents;
+            var totalchange = moneyIn - moneyPrice;
+            change.Cents = totalchange % 100;
+            change.Euros = totalchange / 100;
+            Amount = change;
 
-            return _change;
+            return Amount;
         }
 
         public Money ReturnMoney()
         {
-            Console.WriteLine($"Your change {_change}");
+            Console.WriteLine($"Your change {Amount}");
 
-            return _change;
+            return Amount;
         }
 
         public bool AddProduct(string name, Money price, int count)
@@ -74,36 +70,40 @@ namespace VendingMachine
 
         public void BuyProduct(string name)
         {
-            Product selectedProduct = Products.First(p => p.Name == name);
-            UpdateProduct(0, name, selectedProduct.Price, 1);
-        }
-
-        public bool UpdateProduct(int productNumber, string name, Money? price, int amount)
-        {
             bool found = false;
             Product selectedProduct = Products.FirstOrDefault(x => x.Name == name ? found = true : found = false);
-            if (found && selectedProduct.IsAvailable())
+            if (found && selectedProduct.Available > 0)
             {
                 if (selectedProduct.CanAfford(Amount))
                 {
                     Console.WriteLine($"Bought {selectedProduct.Name} for {selectedProduct.Price}!");
-                    CalculateChange(selectedProduct);
+                    selectedProduct.Available--;
+                    CalculateChange(selectedProduct.Price);
                     ReturnMoney();
-                    DeleteAmounts();
-                    selectedProduct.DecreaseCount();
-
-                    return true;
+                    DeleteAmount();
                 }
                 else
                 {
                     Console.WriteLine("Not enough money!");
-
-                    return false;
                 }
             }
             else
             {
-                Console.WriteLine("Product not found!");
+                Console.WriteLine("Product not found or out of stock!");
+            }
+        }
+
+        public bool UpdateProduct(int productNumber, string name, Money? price, int amount)
+        {
+            if (productNumber >= 0 && productNumber < Products.Length - 1)
+            {
+                Products[productNumber] = new Product { Available = amount, Name = name, Price = price.HasValue ? price.Value : new Money() };
+
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Product not found");
 
                 return false;
             }

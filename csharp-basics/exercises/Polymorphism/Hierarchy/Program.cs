@@ -23,7 +23,7 @@ namespace Hierarchy
                     case "Mouse": animalList.Add(new Mouse(info[1], info[0], double.Parse(info[2]), info[3])); break;
                 }
 
-                animalList[i].makeSound();
+                animalList[i].MakeSound();
                 Console.WriteLine("Enter food info - {FoodType} {Quantity}");
                 input = Console.ReadLine();
                 info = input.Split(' ');
