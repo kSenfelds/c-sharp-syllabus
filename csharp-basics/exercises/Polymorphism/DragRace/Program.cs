@@ -1,24 +1,51 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DragRace
 {
     class Program
     {
-        /**
- * Take a look at the cars in this solution.
- * 1. Extract common behaviour to an interface called Car, and use it in the all classes.
- * Which methods will be extracted with an empty body, and which can be default?
- * 2. Create two more cars of your own choice.
- * 3. As you see there is a possibility to use some kind of boost in Lexus, extract it to a new interface
-          and add that behaviour in one more car.
- * 4. Create one instance of an each car and add them to list.
- * 5. Iterate over the list 10 times, in the 3rd iteration use speed boost on the car if they have one.
- * 6. Print out the car name and speed of the fastest car
- */
-
         private static void Main(string[] args)
         {
-            
+            List<ICar> list = new List<ICar>();
+            list.Add(new Bmw());
+            list.Add(new Audi());
+            list.Add(new Lexus());
+            list.Add(new Tesla());
+            list.Add(new Toyota());
+            list.Add(new Volkswagen());
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (i == 0)
+                {
+                    list.ForEach(x => x.StartEngine());
+                }
+                else
+                {
+                    for (int j = 0; j < list.Count(); j++)
+                    {
+                        if (i == 2)
+                        {
+                            if (list[j] is IBoostable boostable)
+                            {
+                                boostable.UseNitrousOxideEngine();
+                            }
+                        }
+                        else
+                        {
+                            list[j].SpeedUp();
+                        }
+                    }
+                }
+            }
+
+            var maxSpeed = list.Max(x => int.Parse(x.ShowCurrentSpeed()));
+            var winner = list.First(x => x.ShowCurrentSpeed() == maxSpeed.ToString());
+            Console.WriteLine($"{winner.GetType()} : {maxSpeed}");
+
+            Console.ReadKey();
         }
     }
 }

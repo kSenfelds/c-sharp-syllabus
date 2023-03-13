@@ -1,15 +1,13 @@
-﻿using System;
-
-namespace Persons
+﻿namespace Persons
 {
     class Program
     {
         static void Main(string[] args)
         {
-            /*
-             * - Create an instant of class Student and an instant of class Employee with proper values for the attributes.
-             * - Display the content of each class using Display() method.
-             */
+            Person kristaps = new Student("Kristaps", "Senfelds", "Nākotne", 1, 100.05);
+            Person rihards = new Employee("Rihards-Reinis", "Senfelds", "Jelgava", 2, "BOSS!");
+            kristaps.Display();
+            rihards.Display();
         }
     }
 }

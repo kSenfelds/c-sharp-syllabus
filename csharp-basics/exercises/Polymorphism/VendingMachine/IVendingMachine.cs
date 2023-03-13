@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VendingMachine
+﻿namespace VendingMachine
 {
     public interface IVendingMachine
     {
-        string Manufacturer { get; }
-
+        public string Manufacturer { get; }
         public bool HasProducts { get; }
-
         public Money Amount { get; }
         Product[] Products { get; set; }
-        Money InsertCoin(Money amount);
+        public Money InsertCoin(Money amount);
 
-        Money ReturnMoney();
+        public Money ReturnMoney();
 
-        bool AddProduct(string name, Money price, int count);
+        public bool AddProduct(string name, Money price, int count);
 
-        bool UpdateProduct(int productNumber, string name, Money? price, int amount);
+        public bool UpdateProduct(int productNumber, string name, Money? price, int amount);
     }
 }
